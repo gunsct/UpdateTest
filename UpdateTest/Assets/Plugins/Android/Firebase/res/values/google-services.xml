@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+  <string name="firebase_database_url" translatable="false">https://updatetest-fffd3.firebaseio.com</string>
+  <string name="gcm_defaultSenderId" translatable="false">2611633915</string>
+  <string name="google_storage_bucket" translatable="false">updatetest-fffd3.appspot.com</string>
+  <string name="project_id" translatable="false">updatetest-fffd3</string>
+  <string name="google_api_key" translatable="false">AIzaSyBc0IT4khNxnrdHGkWKv-wGgFGyUwRfEFM</string>
+  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBc0IT4khNxnrdHGkWKv-wGgFGyUwRfEFM</string>
+  <string name="google_app_id" translatable="false">1:2611633915:android:0eabd85d6b249dde</string>
+  <string name="default_web_client_id" translatable="false">2611633915-atpqmjj7mftqjgp8sppr6mt50rli729c.apps.googleusercontent.com</string>
+</resources>

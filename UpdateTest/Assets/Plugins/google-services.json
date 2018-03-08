@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "2611633915",
+    "firebase_url": "https://updatetest-fffd3.firebaseio.com",
+    "project_id": "updatetest-fffd3",
+    "storage_bucket": "updatetest-fffd3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:2611633915:android:60bb95643898e37d",
+        "android_client_info": {
+          "package_name": "com.Company.ProductName"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "2611633915-atpqmjj7mftqjgp8sppr6mt50rli729c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBc0IT4khNxnrdHGkWKv-wGgFGyUwRfEFM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:2611633915:android:0eabd85d6b249dde",
+        "android_client_info": {
+          "package_name": "com.YBH.UpdateTest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "2611633915-atpqmjj7mftqjgp8sppr6mt50rli729c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBc0IT4khNxnrdHGkWKv-wGgFGyUwRfEFM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
