@@ -82,6 +82,9 @@
     <Reference Include="Firebase.Auth">
       <HintPath>Assets\Firebase\Plugins\Firebase.Auth.dll</HintPath>
     </Reference>
+    <Reference Include="Firebase.Database">
+      <HintPath>Assets\Firebase\Plugins\Firebase.Database.dll</HintPath>
+    </Reference>
     <Reference Include="Firebase.Platform">
       <HintPath>Assets\Firebase\Plugins\Firebase.Platform.dll</HintPath>
     </Reference>
@@ -100,15 +103,15 @@
     <Reference Include="Unity.Tasks">
       <HintPath>Assets\Parse\Plugins\Unity.Tasks.dll</HintPath>
     </Reference>
-    <Reference Include="Firebase.Database">
-      <HintPath>Assets\Firebase\Plugins\Firebase.Database.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Manager\AssetLoader.cs" />
+    <Compile Include="Assets\Scripts\Manager\BundleDownLoad.cs" />
     <Compile Include="Assets\Scripts\Manager\UIManager.cs" />
     <Compile Include="Assets\Scripts\Manager\UpdateManager.cs" />
     <Compile Include="Assets\Scripts\Utility\DeleteSingleTon.cs" />
     <Compile Include="Assets\Scripts\Utility\DonDeleteSingleTon.cs" />
+    <Compile Include="Assets\Scripts\Utility\ReApplyShaders.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Firebase\Editor\AppDependencies.xml" />
@@ -120,6 +123,7 @@
     <None Include="Assets\Firebase\Plugins\link.xml" />
     <None Include="Assets\Firebase\m2repository\com\google\firebase\firebase-app-unity\maven-metadata.xml" />
     <None Include="Assets\Firebase\m2repository\com\google\firebase\firebase-auth-unity\maven-metadata.xml" />
+    <None Include="Assets\Horse\SoftAlpha.shader" />
     <None Include="Assets\PlayServicesResolver\Editor\play-services-resolver_v1.2.61.0.txt" />
     <None Include="Assets\Plugins\Android\Firebase\AndroidManifest.xml" />
     <None Include="Assets\Plugins\Android\Firebase\res\values\google-services.xml" />
@@ -133,8 +137,14 @@
     <None Include="Assets\Plugins\Android\com.google.firebase.firebase-analytics-impl-license-11.8.0\third_party_licenses.txt" />
     <None Include="Assets\Plugins\Android\com.google.firebase.firebase-analytics-license-11.8.0\AndroidManifest.xml" />
     <None Include="Assets\Plugins\Android\com.google.firebase.firebase-analytics-license-11.8.0\third_party_licenses.txt" />
+    <None Include="Assets\Plugins\Android\com.google.firebase.firebase-app-unity-4.4.3\AndroidManifest.xml" />
+    <None Include="Assets\Plugins\Android\com.google.firebase.firebase-app-unity-4.4.3\R.txt" />
+    <None Include="Assets\Plugins\Android\com.google.firebase.firebase-app-unity-4.4.3\proguard.txt" />
     <None Include="Assets\Plugins\Android\com.google.firebase.firebase-auth-license-11.8.0\AndroidManifest.xml" />
     <None Include="Assets\Plugins\Android\com.google.firebase.firebase-auth-license-11.8.0\third_party_licenses.txt" />
+    <None Include="Assets\Plugins\Android\com.google.firebase.firebase-auth-unity-4.4.3\AndroidManifest.xml" />
+    <None Include="Assets\Plugins\Android\com.google.firebase.firebase-auth-unity-4.4.3\R.txt" />
+    <None Include="Assets\Plugins\Android\com.google.firebase.firebase-auth-unity-4.4.3\proguard.txt" />
     <None Include="Assets\Plugins\Android\com.google.firebase.firebase-common-11.8.0\AndroidManifest.xml" />
     <None Include="Assets\Plugins\Android\com.google.firebase.firebase-common-license-11.8.0\AndroidManifest.xml" />
     <None Include="Assets\Plugins\Android\com.google.firebase.firebase-common-license-11.8.0\third_party_licenses.txt" />
