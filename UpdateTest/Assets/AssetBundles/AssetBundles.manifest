@@ -1,7 +1,10 @@
 ManifestFileVersion: 0
-CRC: 621747083
+CRC: 982654391
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
       Name: asset_0
+      Dependencies: {}
+    Info_1:
+      Name: gamascene
       Dependencies: {}

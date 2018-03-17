@@ -1,16 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class UIManager : MonoBehaviour {
+public class UIManager : DonDeleteSingleton<UIManager> {
+    public GameObject update_button, loading_progress;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public override void Init() {
+        update_button.SetActive(false);
+        loading_progress.SetActive(false);
+    }
+
+    public void UpdateButton() {
+        StartCoroutine(BundleDownLoad.Instance.SaveAssetBundleOnDisk());
+        update_button.SetActive(false);
+    }
 }

@@ -105,8 +105,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Data\Path.cs" />
     <Compile Include="Assets\Scripts\Manager\AssetLoader.cs" />
     <Compile Include="Assets\Scripts\Manager\BundleDownLoad.cs" />
+    <Compile Include="Assets\Scripts\Manager\SceneLoader.cs" />
     <Compile Include="Assets\Scripts\Manager\UIManager.cs" />
     <Compile Include="Assets\Scripts\Manager\UpdateManager.cs" />
     <Compile Include="Assets\Scripts\Utility\DeleteSingleTon.cs" />

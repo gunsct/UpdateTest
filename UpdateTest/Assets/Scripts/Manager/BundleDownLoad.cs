@@ -3,64 +3,43 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Networking;
 
-public class BundleDownLoad : MonoBehaviour {
+public class BundleDownLoad : DonDeleteSingleton<BundleDownLoad> {
+    int BUNDLE_COUNT = 0;
+    [SerializeField]
+    string[] bundle_uri;
+    [SerializeField]
+    string[] bundle_name;
 
-
-    // 서버에서 받아오고자 하는 에셋 번들의 이름 목록
-
-
-    // 지금은 간단한 배열 형태를 사용하고 있지만 이후에는
-
-
-    // xml이나 json을 사용하여 현재 가지고 있는 에셋 번들의 버전을 함께 넣어주고
-
-
-    // 서버의 에셋 번들 버전 정보를 비교해서 받아오는 것이 좋다.
-    public string[] assetBundleNames;
-
-    private void Awake() {
-        StartCoroutine(SaveAssetBundleOnDisk());
+    public override void Init() {
+        BUNDLE_COUNT = bundle_name.Length;
     }
-    IEnumerator SaveAssetBundleOnDisk() {
 
+    public IEnumerator SaveAssetBundleOnDisk() {
+        while (BUNDLE_COUNT > 0) {//번들 개수만큼 다운로드 반복
+            //번들의 주소, 주소 + 번들명이 대부분인데 다운로드 url이 따로 있는 파이어베이스는 그대로 사용 
+            string uri = bundle_uri[BUNDLE_COUNT - 1];
 
-        // 에셋 번들을 받아오고자하는 서버의 주소
+            // 웹 서버에 요청을 생성한다. 
+            UnityWebRequest request = UnityWebRequest.Get(uri);
+            yield return request.Send();
 
+            //완료될때까지 기다린다.
+            yield return request.isDone;
 
-        // 지금은 주소와 에셋 번들 이름을 함께 묶어 두었지만
+            //에셋번들 받을 경로를 생성한다. pc는 에셋 폴더 내부에, 안드로이드는 앱 폴더 내에 임의로 생성.
+            if (!Directory.Exists(Path.assetBundleDirectory)) {
+                Directory.CreateDirectory(Path.assetBundleDirectory);
+            }
 
+            // 파일 입출력을 통해 받아온 에셋을 저장하는 과정
+            FileStream fs = new FileStream(Path.assetBundleDirectory + bundle_name[BUNDLE_COUNT - 1], System.IO.FileMode.Create);
+            fs.Write(request.downloadHandler.data, 0, (int)request.downloadedBytes);
+            fs.Close();
 
-        // 주소 + 에셋 번들 이름 형태를 띄는 것이 좋다.
-        string uri = "gs://updatetest-fffd3.appspot.com/asset_0";
-
-
-
-
-
-        // 웹 서버에 요청을 생성한다.
-        UnityWebRequest request = UnityWebRequest.Get(uri);
-        yield return request.Send();
-
-
-
-
-
-        // 에셋 번들을 저장할 경로
-
-
-        string assetBundleDirectory = "Assets/AssetBundles";
-        // 에셋 번들을 저장할 경로의 폴더가 존재하지 않는다면 생성시킨다.
-        if (!Directory.Exists(assetBundleDirectory)) {
-            Directory.CreateDirectory(assetBundleDirectory);
+            BUNDLE_COUNT--;
         }
 
-
-
-
-
-        // 파일 입출력을 통해 받아온 에셋을 저장하는 과정
-        FileStream fs = new FileStream(assetBundleDirectory + "/" + "asset_0", System.IO.FileMode.Create);
-        fs.Write(request.downloadHandler.data, 0, (int)request.downloadedBytes);
-        fs.Close();
+        //저장이 끝난 후 메인씬 로드 시작
+        StartCoroutine(SceneLoader.Instance.LoadSceneFromAssetBundle("Main",false));
     }
 }
